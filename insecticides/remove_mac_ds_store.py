@@ -48,7 +48,7 @@ def remove_files(dest_paths: List[str]) -> None:
         os.remove(file_path)
 
 
-def app(dest_dir: str) -> None:
+def init_app():
     print(script_ascii_art)
 
     if len(sys.argv) != 2:
@@ -58,6 +58,10 @@ def app(dest_dir: str) -> None:
     if not os.path.isdir(sys.argv[1]):
         print(f"[{script_name}] ArgIn<{sys.argv[1]}> isn't a dir\n")
         exit(-1)
+
+
+def app(dest_dir: str) -> None:
+    init_app()
 
     status = 0
 
